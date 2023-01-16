@@ -8,6 +8,11 @@ from tqdm import tqdm
 from torch.utils.data import Dataset, DataLoader, RandomSampler, SequentialSampler
 import transformers 
 
+#################################################
+
+# General Utils
+
+#################################################
 
 def set_seed(seed: int, set_random=True):
     """Helper function for reproducible behavior to set the seed in ``random``, 
@@ -29,11 +34,12 @@ def set_seed(seed: int, set_random=True):
         import tensorflow as tf
 
         tf.random.set_seed(seed)
-    
-def compute_metrics(eval_pred):
-    predictions, labels = eval_pred
-    predictions = np.argmax(predictions, axis=1)
-    return metric.compute(predictions=predictions, references=labels)
+   
+#################################################
+
+# Data manipulation & set-up
+
+#################################################
 
 class CustomDataset(Dataset):
 
@@ -70,7 +76,6 @@ class CustomDataset(Dataset):
             'targets': torch.tensor(self.targets[index], dtype=torch.float)
         }
     
-# Creating the dataset and dataloader for the neural network
 def get_Fold(final_df_dataset, tokenizer, k_seed, train_batch_size, valid_batch_size, max_length=512, train_size=0.8):
     
     train_dataset = final_df_dataset.sample(frac=train_size, random_state=k_seed)
@@ -97,7 +102,6 @@ def get_Fold(final_df_dataset, tokenizer, k_seed, train_batch_size, valid_batch_
     
     return training_loader, testing_loader
 
-# Creating the dataset and dataloader for the neural network
 def get_collection_Fold(final_df_dataset, collection, tokenizer, train_batch_size, valid_batch_size, max_length=512):
     
     train_dataset = final_df_dataset[~final_df_dataset["collection"].isin([collection])]
@@ -126,8 +130,12 @@ def get_collection_Fold(final_df_dataset, collection, tokenizer, train_batch_siz
     
     return training_loader, testing_loader
 
-# Creating the customized model, by adding a drop out and a dense layer on top of 
-# the BERT (or any other) model, to get the final output. 
+#################################################
+
+# Architectures
+
+#################################################
+
 class BERTClass(torch.nn.Module):
     def __init__(self, model_name, n_classes, freeze_BERT=False, layer=-1, idx=0):
         super(BERTClass, self).__init__()
@@ -150,11 +158,42 @@ class BERTClass(torch.nn.Module):
         output   = self.l3(output_2)
         return output
 
-# Loss function 
+class BERT_PTM(transformers.PreTrainedModel):
+    def __init__(self, config, model_name, n_classes, freeze_BERT=False, layer=-1, idx=0):
+        super(BERT_PTM, self).__init__(config)
+        self.l1 = transformers.BertModel.from_pretrained(model_name)
+        self.l2 = torch.nn.Dropout(0.3)
+        self.l3 = torch.nn.Linear(1024, n_classes)
+        self.layer = layer
+        self.idx   = idx  
+        # Froze the weight of model aside of the classifier
+        if freeze_BERT:
+            print("Freezing the layer of BERT model")
+            for name, param in self.l1.named_parameters():
+                if "classifier" not in name:
+                    param.requires_grad = False
+                    
+    def forward(self, ids, mask, token_type_ids):
+        output_1 = self.l1(ids, attention_mask = mask, token_type_ids = token_type_ids)
+        output_1 = output_1.last_hidden_state[:, -1, :]
+        output_2 = self.l2(output_1)
+        output   = self.l3(output_2)
+        return output
+
+#################################################
+
+# Training & Validation
+
+#################################################
+
 def loss_fn(outputs, targets):
     return torch.nn.BCEWithLogitsLoss()(outputs, targets)
 
-# Training regime
+def compute_metrics(eval_pred):
+    predictions, labels = eval_pred
+    predictions = np.argmax(predictions, axis=1)
+    return metric.compute(predictions=predictions, references=labels)
+
 def train(epoch, model, training_loader, optimizer, return_losses=False, device="cuda"):
     Losses = []
     model.train()
@@ -179,7 +218,6 @@ def train(epoch, model, training_loader, optimizer, return_losses=False, device=
     if return_losses:
         return Losses
     
-# Validate (test) the model
 def validation(model, testing_loader, device="cuda"):
     model.eval()
     fin_targets=[]

@@ -8,10 +8,6 @@ All experiments are via original code, while the analyses are carried out via Ju
 
 See the `*_requirements.txt` files for each set of experiment.
 
-## Requirments
-
-See the `*_requirements.txt` files for each set of experiments.
-
 ## Acknowledgements
 
 ### Data

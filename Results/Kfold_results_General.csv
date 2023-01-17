@@ -1,46 +1,46 @@
-precision,recall,f1-score,support,Fold,
-AN,87,92,9,51,0
-AP,82,98,89,85,0
-SD,84,9,87,29,0
-CO,95,88,92,43,0
-HA,86,96,91,51,0
-micro avg,86,94,9,259,0
-macro avg,87,93,9,259,0
-weighted avg,86,94,9,259,0
-samples avg,9,95,91,259,0
-AN,78,89,83,36,1
-AP,91,89,9,89,1
-SD,84,87,85,30,1
-CO,9,97,94,38,1
-HA,92,86,89,56,1
-micro avg,88,89,89,249,1
-macro avg,87,89,88,249,1
-weighted avg,88,89,89,249,1
-samples avg,88,9,88,249,1
-AN,8,87,83,45,2
-AP,88,94,91,87,2
-SD,88,91,89,32,2
-CO,95,9,93,42,2
-HA,9,86,88,42,2
-micro avg,88,9,89,248,2
-macro avg,88,9,89,248,2
-weighted avg,88,9,89,248,2
-samples avg,9,92,9,248,2
-AN,87,98,92,40,3
-AP,91,99,95,89,3
-SD,7,84,76,31,3
-CO,83,81,82,42,3
-HA,76,9,83,42,3
-micro avg,83,92,88,244,3
-macro avg,81,9,85,244,3
-weighted avg,84,92,88,244,3
-samples avg,87,93,88,244,3
-AN,77,92,84,40,4
-AP,89,91,9,97,4
-SD,65,85,73,26,4
-CO,88,84,86,43,4
-HA,9,84,87,43,4
-micro avg,84,88,86,249,4
-macro avg,82,87,84,249,4
-weighted avg,84,88,86,249,4
-samples avg,86,89,86,249,4
+,precision,recall,f1-score,support,Fold,collection,Experiment,Emotions Set
+AN,87.0,92.0,90.0,51,0,K-fold General,K-fold General,General
+AP,82.0,98.0,89.0,85,0,K-fold General,K-fold General,General
+SD,84.0,90.0,87.0,29,0,K-fold General,K-fold General,General
+CO,95.0,88.0,92.0,43,0,K-fold General,K-fold General,General
+HA,86.0,96.0,91.0,51,0,K-fold General,K-fold General,General
+micro avg,86.0,94.0,90.0,259,0,K-fold General,K-fold General,General
+macro avg,87.0,93.0,90.0,259,0,K-fold General,K-fold General,General
+weighted avg,86.0,94.0,90.0,259,0,K-fold General,K-fold General,General
+samples avg,90.0,95.0,91.0,259,0,K-fold General,K-fold General,General
+AN,78.0,89.0,83.0,36,1,K-fold General,K-fold General,General
+AP,91.0,89.0,90.0,89,1,K-fold General,K-fold General,General
+SD,84.0,87.0,85.0,30,1,K-fold General,K-fold General,General
+CO,90.0,97.0,94.0,38,1,K-fold General,K-fold General,General
+HA,92.0,86.0,89.0,56,1,K-fold General,K-fold General,General
+micro avg,88.0,89.0,89.0,249,1,K-fold General,K-fold General,General
+macro avg,87.0,89.0,88.0,249,1,K-fold General,K-fold General,General
+weighted avg,88.0,89.0,89.0,249,1,K-fold General,K-fold General,General
+samples avg,88.0,90.0,88.0,249,1,K-fold General,K-fold General,General
+AN,80.0,87.0,83.0,45,2,K-fold General,K-fold General,General
+AP,88.0,94.0,91.0,87,2,K-fold General,K-fold General,General
+SD,88.0,91.0,89.0,32,2,K-fold General,K-fold General,General
+CO,95.0,90.0,93.0,42,2,K-fold General,K-fold General,General
+HA,90.0,86.0,88.0,42,2,K-fold General,K-fold General,General
+micro avg,88.0,90.0,89.0,248,2,K-fold General,K-fold General,General
+macro avg,88.0,90.0,89.0,248,2,K-fold General,K-fold General,General
+weighted avg,88.0,90.0,89.0,248,2,K-fold General,K-fold General,General
+samples avg,90.0,92.0,90.0,248,2,K-fold General,K-fold General,General
+AN,87.0,98.0,92.0,40,3,K-fold General,K-fold General,General
+AP,91.0,99.0,95.0,89,3,K-fold General,K-fold General,General
+SD,70.0,84.0,76.0,31,3,K-fold General,K-fold General,General
+CO,83.0,81.0,82.0,42,3,K-fold General,K-fold General,General
+HA,76.0,90.0,83.0,42,3,K-fold General,K-fold General,General
+micro avg,83.0,92.0,88.0,244,3,K-fold General,K-fold General,General
+macro avg,81.0,90.0,85.0,244,3,K-fold General,K-fold General,General
+weighted avg,84.0,92.0,88.0,244,3,K-fold General,K-fold General,General
+samples avg,87.0,93.0,88.0,244,3,K-fold General,K-fold General,General
+AN,77.0,92.0,84.0,40,4,K-fold General,K-fold General,General
+AP,89.0,91.0,90.0,97,4,K-fold General,K-fold General,General
+SD,65.0,85.0,73.0,26,4,K-fold General,K-fold General,General
+CO,88.0,84.0,86.0,43,4,K-fold General,K-fold General,General
+HA,90.0,84.0,87.0,43,4,K-fold General,K-fold General,General
+micro avg,84.0,88.0,86.0,249,4,K-fold General,K-fold General,General
+macro avg,82.0,87.0,84.0,249,4,K-fold General,K-fold General,General
+weighted avg,84.0,88.0,86.0,249,4,K-fold General,K-fold General,General
+samples avg,86.0,89.0,86.0,249,4,K-fold General,K-fold General,General

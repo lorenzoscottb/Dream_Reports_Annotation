@@ -3,7 +3,7 @@
 This repository contains the code, results, and analysis of the experiment on the automatic annotation of dream-reports. The annotation process is largely based on pre-trained largel language models (implemented maninly via Hugging Face 🤗).
 
 # Content
-### Experiments
+## Experiments
 
 The work revolvs around two main set of experiments:
 
@@ -12,11 +12,11 @@ The work revolvs around two main set of experiments:
 
 Code for each set of experiments can be found in the dedicated folders inside the `Experiments` folders.
 
-### Analysis
+## Analysis
 
 The analysis of the collected results can be found in the dedicated jupiter notebooks.
 
-### Results 
+## Results 
 
 The results and predictions collected in all the experiments. 
 
@@ -84,13 +84,13 @@ predictions
 >>> {'label': 'CO', 'score': 0.032238591462373734},
 >>> {'label': 'HA', 'score': 0.9570998549461365}]]
 ````
-### Test via Spaces
+### Query via Spaces
 
-You can also directly test the 🤗 models via the API we setted up on the Hugging Face Space [here](https://huggingface.co/spaces/lorenzoscottb/DSA-II)
+To get an ide of the classification abilitied of the two 🤗 models you can also directly query them via the [Hugging Face Space](https://huggingface.co/spaces/lorenzoscottb/DSA-II) built on top of them. You can also you the space to check if the language your reports are in is included in the multi-lingual model.
 
 # Requirments
 
-See the `*_requirements.txt` files for each set of experiment.
+If you want to re-run the code of any of our experiment, please make sure to chek the `*_requirements.txt` files for each set of experiment.
 
 # Acknowledgements
 

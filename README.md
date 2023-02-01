@@ -54,9 +54,9 @@ Setup and run the classification pipeline
 from transformers import pipeline
 
 # get some dream to classify
-test_sentences = [
-    "In my dream I was follwed by the scary monster.",
-    "I was walking in a forest, sorrounded by singing birds. I was in calm and peace."
+test_dreams = [
+    "In my dream, I was followed by the scary monster.",
+    "I was walking in a forest, surrounded by singing birds. I was calm and at peace."
 ]
 
 # set up the pipeline
@@ -64,25 +64,26 @@ classifier = pipeline(
     task="text-classification", 
     model=model, 
     tokenizer=tokenizer,
-    return_all_scores=True, # Fasle to get above-threshold classes only
+    top_k=None, # set to k=n if just need top n classes instead of all
 )
 
 # get the model's classification
-predictions = classifier(test_sentences)
+predictions = classifier(test_dreams)
 
 # print the predictions' dictionaries (i.e., the probability associated with each Hall & Van de Castle emotion:
 # anger (AN) apprehension (AP), sadness (SD), confusion (CO), happiness (HA)
 predictions
->>> [[{'label': 'AN', 'score': 0.021188955754041672},
->>> {'label': 'AP', 'score': 0.8773345351219177},
->>> {'label': 'SD', 'score': 0.010038740932941437},
->>> {'label': 'CO', 'score': 0.0854405090212822},
->>> {'label': 'HA', 'score': 0.03229339420795441}],
->>> [{'label': 'AN', 'score': 0.007893212139606476},
->>> {'label': 'AP', 'score': 0.08208194375038147},
->>> {'label': 'SD', 'score': 0.03895331546664238},
->>> {'label': 'CO', 'score': 0.032238591462373734},
->>> {'label': 'HA', 'score': 0.9570998549461365}]]
+>>> 
+>>> [[{'label': 'AP', 'score': 0.8697441816329956},
+>>>   {'label': 'CO', 'score': 0.1245221346616745},
+>>>   {'label': 'HA', 'score': 0.025534192100167274},
+>>>   {'label': 'AN', 'score': 0.015074575319886208},
+>>>   {'label': 'SD', 'score': 0.010451494716107845}],
+>>>  [{'label': 'HA', 'score': 0.9519748091697693},
+>>>   {'label': 'AP', 'score': 0.07662183046340942},
+>>>   {'label': 'SD', 'score': 0.042797815054655075},
+>>>   {'label': 'CO', 'score': 0.02953989803791046},
+>>>   {'label': 'AN', 'score': 0.008983743377029896}]]
 ````
 ### Query via Spaces
 

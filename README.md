@@ -49,7 +49,7 @@ tokenizer = AutoTokenizer.from_pretrained("lorenzoscottb/bert-base-cased-DreamBa
 model     = AutoModelForSequenceClassification.from_pretrained("lorenzoscottb/bert-base-cased-DreamBank")
 ```
 
-Setup the classification pipleine and the dreams to classify
+Setup and run the classification pipeline
 ```py
 from transformers import pipeline
 

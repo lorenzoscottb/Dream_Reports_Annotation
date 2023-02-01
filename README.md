@@ -73,7 +73,6 @@ predictions = classifier(test_dreams)
 # print the predictions' dictionaries (i.e., the probability associated with each Hall & Van de Castle emotion:
 # anger (AN) apprehension (AP), sadness (SD), confusion (CO), happiness (HA)
 predictions
->>> 
 >>> [[{'label': 'AP', 'score': 0.8697441816329956},
 >>>   {'label': 'CO', 'score': 0.1245221346616745},
 >>>   {'label': 'HA', 'score': 0.025534192100167274},

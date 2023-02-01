@@ -18,7 +18,7 @@ The analysis of the collected results can be found in the dedicated jupiter note
 
 # Trained Models
 ## Main model
-The main model can be downloaded and used via the `collect_predictions.py` script from the `Experiments/Supervised_Learning`.
+A link to downloaded the weights of the main model can be found in the `Experiments/Supervised_Learning` section, together with the code used to tune the the model, collect the predictions preseted in the paper, as well as a basic usage example.
 
 ## Secondary 🤗 models 
 Together with the main deployed model, we trained and open-sourced two more models, which are two LLMs tuned as `multi-class` classifiers solely using the the standard 🤗 trainer pipeline. Despite Achiving a lower performance, these models posses other desireble features. First, they can be directly dowladed and used via 🤗 ```transformers``` library. Secondly, one of the released model can annotate dreams from 94 languages, whle the second is based on a (engluhs only) smaller encoder, hence rquireing less computational power. 

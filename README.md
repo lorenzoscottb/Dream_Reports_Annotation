@@ -16,6 +16,10 @@ Code for each set of experiments can be found in the dedicated folders inside th
 
 The analysis of the collected results can be found in the dedicated jupiter notebooks.
 
+### Results 
+
+The results and predictions collected in all the experiments. 
+
 # Trained Models
 ## Main model
 A link to downloaded the weights of the main model can be found in the `Experiments/Supervised_Learning` section, together with the code used to tune the the model, collect the predictions preseted in the paper, as well as a basic usage example.

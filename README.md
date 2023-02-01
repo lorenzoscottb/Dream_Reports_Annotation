@@ -1,6 +1,6 @@
-# Automatic Dream–Reports Annotation with Large Language Models (LLMs)
+# Automatic Dream–Reports Annotation with Large Language Models
 
-This repository contains the code, results, and analysis of the experiment on the automatic annotation of dream-reports. The annotation process is largely based on pre-trained largel language models (implemented maninly via Hugging Face 🤗).
+This repository contains the code, results, and analysis of the experiment on the automatic annotation of dream-reports. The annotation process is largely based on pre-trained largel language models (LLMs), implemented maninly via Hugging Face 🤗.
 
 # Content
 ## Experiments

@@ -28,13 +28,14 @@ A link to downloaded the weights of the main model can be found in the `Experime
 Together with the main deployed model, we trained and open-sourced two more models, which are two LLMs tuned as `multi-class` classifiers solely using the the standard 🤗 trainer pipeline. Despite Achiving a lower performance, these models posses other desireble features. First, they can be directly dowladed and used via 🤗 ```transformers``` library. Secondly, one of the released model can annotate dreams from 94 languages, whle the second is based on a (engluhs only) smaller encoder, hence rquireing less computational power. 
 
 ### Usage
+Select a model and a tokenizer betweem the 
+
 [Large-Multilingual](https://huggingface.co/lorenzoscottb/xlm-roberta-large-DreamBank)
 ```py
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
 tokenizer = AutoTokenizer.from_pretrained("lorenzoscottb/xlm-roberta-large-DreamBank")
-
-model = AutoModelForSequenceClassification.from_pretrained("lorenzoscottb/xlm-roberta-large-DreamBank")
+model     = AutoModelForSequenceClassification.from_pretrained("lorenzoscottb/xlm-roberta-large-DreamBank")
 ```
 
 [Small–English only](https://huggingface.co/lorenzoscottb/bert-base-cased-DreamBank)
@@ -42,12 +43,52 @@ model = AutoModelForSequenceClassification.from_pretrained("lorenzoscottb/xlm-ro
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
 tokenizer = AutoTokenizer.from_pretrained("lorenzoscottb/bert-base-cased-DreamBank")
-
-model = AutoModelForSequenceClassification.from_pretrained("lorenzoscottb/bert-base-cased-DreamBank")
+model     = AutoModelForSequenceClassification.from_pretrained("lorenzoscottb/bert-base-cased-DreamBank")
 ```
+
+Setup the classification pipleine and the dreams to classify
+```py
+from transformers import pipeline
+
+# get some dream to classify
+test_sentences = [
+    "In my dream I was follwed by the scary monster.",
+    "I was walking in a forest, sorrounded by singing birds. I was in calm and peace."
+]
+
+# set up the pipeline
+classifier = pipeline(
+    task="text-classification", 
+    model=model, 
+    tokenizer=tokenizer,
+    return_all_scores=True,
+)
+
+# get the model's classification
+predictions = classifier(test_sentences)
+
+# print the predictions' dictionaries (i.e., the probability associated with each Hall & Van de Castle emotion:
+# anger (AN) apprehension (AP), sadness (SD), confusion (CO), happiness (HA)
+predictions
+```
+```
+[
+  [{'label': 'AN', 'score': 0.021188955754041672},
+    {'label': 'AP', 'score': 0.8773345351219177},
+    {'label': 'SD', 'score': 0.010038740932941437},
+    {'label': 'CO', 'score': 0.0854405090212822},
+    {'label': 'HA', 'score': 0.03229339420795441}],
+  
+   [{'label': 'AN', 'score': 0.007350880187004805},
+    {'label': 'AP', 'score': 0.08599688112735748},
+    {'label': 'SD', 'score': 0.02770709991455078},
+    {'label': 'CO', 'score': 0.04315123334527016},
+    {'label': 'HA', 'score': 0.9468392133712769}]
+]
+````
 ### Test via Spaces
 
-You can also directly test our 🤗 models in an API fasion via the dedicated Hugging Face Space [here](https://huggingface.co/spaces/lorenzoscottb/DSA-II)
+You can also directly test the 🤗 models via the API we setted up on the Hugging Face Space [here](https://huggingface.co/spaces/lorenzoscottb/DSA-II)
 
 # Requirments
 

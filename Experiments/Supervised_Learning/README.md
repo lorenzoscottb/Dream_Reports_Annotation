@@ -89,7 +89,7 @@ Lastly, inspect the predictions
 corr_outputs_df
 ```
 ```
-	AN	AP	SD	CO	HA	report
-0	0	0	0	0	1	I was walking in a forest, sorrounded by sing...
-1	0	1	0	0	0	In my dream I was follwed by the scary monste..
+AN	AP	SD	CO	HA	report
+0	0	0	0	1	I was walking in a forest, sorrounded by sing...
+0	1	0	0	0	In my dream I was follwed by the scary monste..
 ```

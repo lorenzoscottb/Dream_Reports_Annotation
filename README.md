@@ -28,10 +28,10 @@ A link to downloaded the weights of the main model can be found in the `Experime
 You can find a use-case example of the main model, together with the link to download the weights [here](https://github.com/lorenzoscottb/Dream_Reports_Annotation/tree/main/Experiments/Supervised_Learning)
 
 ## Secondary 🤗 models 
-Together with the main deployed model, we trained and open-sourced two more models, which are two LLMs tuned as `multi-class` classifiers solely using the the standard 🤗 trainer pipeline. Despite Achiving a lower performance, these models posses other desireble features. To start, they can be directly dowladed and used via the 🤗 ```transformers``` library. Moreover, one of can annotate dreams in 94 languages, while a another is based on a (English-only) "small" LLM encoder, hence rquireing signficantly less computational power. 
+While the main model achieves the best and most stable results, it is based on a custom architecture. Hence, setting up a classification pipeline requires more coding dependecies (see link above). For this reason, together with the main deployed model, we trained and open-sourced two more models, which are two LLMs "simply" tuned as `multi-class` classifiers, and solely using the the standard 🤗 trainer pipeline. Despite Achiving a lower performance, these models posses other desireble features. To start, they can be directly dowladed and used via the 🤗 ```transformers``` library. Moreover, one can annotate dreams in 94 languages, while the other is based on a (English-only) "small" LLM encoder, hence rquireing signficantly less computational power. 
 
 ### Usage
-Select a model and a tokenizer betweem the 
+Select a tokenizer and a model between 
 
 [Large-Multilingual](https://huggingface.co/lorenzoscottb/xlm-roberta-large-DreamBank)
 ```py

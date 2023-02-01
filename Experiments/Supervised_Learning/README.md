@@ -1,6 +1,6 @@
 # Tuned model usage
 
-First, make sure your envirment follws the given library requrments, found in the `SL_requrments.txt`. If your are using (as suggested) a conda env, you can do so by running. The, make sure to download the wights of the trained model [here](). Note that all the experiments were run with python `3.9.12`.
+First, make sure your envirment follws the given library requrments, found in the `SL_requrments.txt`. If your are using (as suggested) a conda env, you can do so by running. The, make sure to download the wights of the trained model [here](https://drive.google.com/file/d/16qROgqgQoOyImn4TUtm43zMflbJX89LO/view?usp=sharing). Note that all the experiments were run with python `3.9.12`.
 
 `
 conda install --file requirements.txt

@@ -70,7 +70,7 @@ classifier = pipeline(
 # get the model's classification
 predictions = classifier(test_dreams)
 
-# print the predictions' dictionaries (i.e., the probability associated with each Hall & Van de Castle emotion:
+# print the probability associated with each Hall & Van de Castle emotion:
 # anger (AN) apprehension (AP), sadness (SD), confusion (CO), happiness (HA)
 predictions
 >>> [[{'label': 'AP', 'score': 0.8697441816329956},

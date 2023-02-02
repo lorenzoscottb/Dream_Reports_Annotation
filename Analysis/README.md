@@ -1,3 +1,3 @@
-#Results' Analysis 
+# Analysis of the Results
 
-Notebook and code used to analyse the results produced by the supervised experiments, and to create the figures and table in the work. 
+Jupiter notebooks used to analyse the results produced by the full set of experiments, and to create the figures and table in the work. 

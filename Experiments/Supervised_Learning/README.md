@@ -1,10 +1,16 @@
 # Tuned model usage
 
-First, make sure your envirment follws the given library requrments, found in the `SL_requrments.txt`. If your are using (as suggested) a conda env, you can do so by running. The, make sure to download the wights of the trained model [here](https://drive.google.com/file/d/16qROgqgQoOyImn4TUtm43zMflbJX89LO/view?usp=sharing). Note that all the experiments were run with python `3.9.12`.
+First, make sure your envirment follws the given library requrments, found in the `SL_requrments.txt`. If your are using (as suggested) a conda env, you can do so by running `conda install --file SL_requirements.txt`. Then, make sure to download the trained model's weights. You can either directly download the `pytorch_model.bin` file from [here](https://huggingface.co/DReAMy-Library/DB-custom-architecture/tree/main), and use the path to wherever you choose to download the file, or you can run the following python code in your script, that will download the weights from the Hugging Face hub, and return their location. 
 
-`
-conda install --file requirements.txt
-`
+```py
+path_to_downloaded_model = hf_hub_download(
+    repo_id="DReAMy-Library/DB-custom-architecture", 
+    filename="pytorch_model.bin"
+)
+```
+
+Note that all the experiments were run with python `3.9.12`.
+
 
 Then, first, import the necessary dependecies 
 ```py
@@ -69,7 +75,7 @@ model = BERT_PTM(
 )
 
 # Load the models' weights from the pre-treined model
-model.load_state_dict(torch.load("pytorch_model.bin"))
+model.load_state_dict(torch.load("path/to/pytorch_model.bin"))
 model.to("cuda")
 ```
 

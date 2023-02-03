@@ -34,7 +34,11 @@ def set_seed(seed: int, set_random=True):
         import tensorflow as tf
 
         tf.random.set_seed(seed)
-   
+        
+def decode_clean(x, tokenizer):
+    s = tokenizer.decode(x).replace("[PAD]", "").replace("[CLS]", "").replace("[SEP]", "")
+    return s
+
 #################################################
 
 # Data manipulation & set-up

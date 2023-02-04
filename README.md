@@ -33,20 +33,20 @@ While the main model achieves the best and most stable results, it is based on a
 ### Usage
 Select a tokenizer and a model between 
 
-[Large-Multilingual](https://huggingface.co/lorenzoscottb/xlm-roberta-large-DreamBank)
+[Large-Multilingual](https://huggingface.co/DReAMy-Library/xlm-roberta-large-DreamBank-emotion-presence)
 ```py
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
-tokenizer = AutoTokenizer.from_pretrained("lorenzoscottb/xlm-roberta-large-DreamBank")
-model     = AutoModelForSequenceClassification.from_pretrained("lorenzoscottb/xlm-roberta-large-DreamBank")
+tokenizer = AutoTokenizer.from_pretrained("DReAMy-Library/xlm-roberta-large-DreamBank-emotion-presence")
+model     = AutoModelForSequenceClassification.from_pretrained("DReAMy-Library/xlm-roberta-large-DreamBank-emotion-presence")
 ```
 
-[Small–English only](https://huggingface.co/lorenzoscottb/bert-base-cased-DreamBank)
+[Small–English only](https://huggingface.co/DReAMy-Library/bert-base-cased-DreamBank-emotion-presence)
 ```py
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
-tokenizer = AutoTokenizer.from_pretrained("lorenzoscottb/bert-base-cased-DreamBank")
-model     = AutoModelForSequenceClassification.from_pretrained("lorenzoscottb/bert-base-cased-DreamBank")
+tokenizer = AutoTokenizer.from_pretrained("DReAMy-Library/bert-base-cased-DreamBank-emotion-presence")
+model     = AutoModelForSequenceClassification.from_pretrained("DReAMy-Library/bert-base-cased-DreamBank-emotion-presence")
 ```
 
 Setup and run the classification pipeline

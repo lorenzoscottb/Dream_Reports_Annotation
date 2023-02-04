@@ -86,7 +86,7 @@ predictions
 ````
 ### Query via Spaces
 
-To get an ide of the classification abilitied of the two 🤗 models you can also directly query them via the [Hugging Face Space](https://huggingface.co/spaces/lorenzoscottb/DSA-II) built on top of them. You can also you the space to check if the language your reports are in is included in the multi-lingual model.
+To get an ide of the classification abilitied of the two 🤗 models you can also directly query them via the [Hugging Face Space](https://huggingface.co/spaces/DReAMy-Library/DSA) built on top of them. You can also you the space to check if the language your reports are in is included in the multi-lingual model.
 
 # Requirments
 

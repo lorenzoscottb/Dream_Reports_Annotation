@@ -21,6 +21,8 @@ The analysis of the collected results can be found in the dedicated jupiter note
 The results and predictions collected in all the experiments. 
 
 # Trained Models
+The follwing sections explain how to use the different deployed models. You can either follow the instructions or jump [here](https://github.com/lorenzoscottb/Dream_Reports_Annotation/blob/main/Analysis/trained_model_testing.ipynb) to see a use-case of both with jupiter notebook.
+
 ## Main model
 A link to downloaded the weights of the main model can be found in the `Experiments/Supervised_Learning` section, together with the code used to tune the the model, collect the predictions preseted in the paper, as well as a basic usage example.
 
@@ -33,20 +35,22 @@ While the main model achieves the best and most stable results, it is based on a
 ### Usage
 Select a tokenizer and a model between 
 
-[Large-Multilingual](https://huggingface.co/DReAMy-Library/xlm-roberta-large-DreamBank-emotion-presence)
+[Large-Multilingual](https://huggingface.co/DReAMy-lib/xlm-roberta-large-DreamBank-emotion-presence)
 ```py
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
-tokenizer = AutoTokenizer.from_pretrained("DReAMy-Library/xlm-roberta-large-DreamBank-emotion-presence")
-model     = AutoModelForSequenceClassification.from_pretrained("DReAMy-Library/xlm-roberta-large-DreamBank-emotion-presence")
+model_name = "DReAMy-lib/xlm-roberta-large-DreamBank-emotion-presence"
+tokenizer  = AutoTokenizer.from_pretrained(model_name)
+model      = AutoModelForSequenceClassification.from_pretrained(model_name)
 ```
 
-[Small–English only](https://huggingface.co/DReAMy-Library/bert-base-cased-DreamBank-emotion-presence)
+[Small–English only](https://huggingface.co/DReAMy-lib/bert-base-cased-DreamBank-emotion-presence)
 ```py
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
-tokenizer = AutoTokenizer.from_pretrained("DReAMy-Library/bert-base-cased-DreamBank-emotion-presence")
-model     = AutoModelForSequenceClassification.from_pretrained("DReAMy-Library/bert-base-cased-DreamBank-emotion-presence")
+model_name = "DReAMy-lib/bert-base-cased-DreamBank-emotion-presence
+tokenizer  = AutoTokenizer.from_pretrained(model_name)
+model      = AutoModelForSequenceClassification.from_pretrained(model_name)
 ```
 
 Setup and run the classification pipeline
@@ -86,7 +90,7 @@ predictions
 ````
 ### Query via Spaces
 
-To get an ide of the classification abilitied of the two 🤗 models you can also directly query them via the [Hugging Face Space](https://huggingface.co/spaces/DReAMy-Library/DSA) built on top of them. You can also you the space to check if the language your reports are in is included in the multi-lingual model.
+To get an ide of the classification abilities of these two 🤗 models you can also directly query them via the [Hugging Face Space](https://huggingface.co/spaces/DReAMy-lib/dream) built on top of them. You can also you the space to check if the language your reports are in is included in the multi-lingual model.
 
 # Requirments
 

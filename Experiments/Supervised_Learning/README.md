@@ -4,7 +4,7 @@ First, make sure your envirment follws the given library requrments, found in th
 
 ```py
 path_to_downloaded_model = hf_hub_download(
-    repo_id="DReAMy-Library/DB-custom-architecture", 
+    repo_id="DReAMy-lib/DB-custom-architecture", 
     filename="pytorch_model.bin"
 )
 ```

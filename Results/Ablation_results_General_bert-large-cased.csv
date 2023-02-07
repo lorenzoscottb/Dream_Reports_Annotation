@@ -1,0 +1,55 @@
+precision,recall,f1-score,support,collection
+AN,90.0,96.0,93.0,28,Ed: dreams of his late wife
+AP,96.0,55.00000000000001,70.0,42,Ed: dreams of his late wife
+SD,96.0,83.0,89.0,29,Ed: dreams of his late wife
+CO,95.0,83.0,89.0,24,Ed: dreams of his late wife
+HA,89.0,87.0,88.0,46,Ed: dreams of his late wife
+micro avg,92.0,79.0,85.0,169,Ed: dreams of his late wife
+macro avg,93.0,81.0,86.0,169,Ed: dreams of his late wife
+weighted avg,93.0,79.0,85.0,169,Ed: dreams of his late wife
+samples avg,92.0,83.0,85.0,169,Ed: dreams of his late wife
+AN,90.0,65.0,75.0,40,Bea 1: a high school student
+AP,84.0,80.0,82.0,60,Bea 1: a high school student
+SD,75.0,78.0,77.0,23,Bea 1: a high school student
+CO,70.0,88.0,78.0,8,Bea 1: a high school student
+HA,80.0,47.0,59.0,17,Bea 1: a high school student
+micro avg,82.0,72.0,77.0,148,Bea 1: a high school student
+macro avg,80.0,72.0,74.0,148,Bea 1: a high school student
+weighted avg,83.0,72.0,77.0,148,Bea 1: a high school student
+samples avg,81.0,75.0,76.0,148,Bea 1: a high school student
+AN,91.0,91.0,91.0,22,Emma: 48 years of dreams
+AP,89.0,81.0,85.0,21,Emma: 48 years of dreams
+SD,86.0,75.0,80.0,8,Emma: 48 years of dreams
+CO,78.0,100.0,88.0,7,Emma: 48 years of dreams
+HA,87.0,97.0,92.0,35,Emma: 48 years of dreams
+micro avg,88.0,90.0,89.0,93,Emma: 48 years of dreams
+macro avg,86.0,89.0,87.0,93,Emma: 48 years of dreams
+weighted avg,88.0,90.0,89.0,93,Emma: 48 years of dreams
+samples avg,91.0,92.0,90.0,93,Emma: 48 years of dreams
+AN,83.0,91.0,87.0,43,Barb Sanders: baseline
+AP,96.0,86.0,90.0,83,Barb Sanders: baseline
+SD,69.0,92.0,79.0,26,Barb Sanders: baseline
+CO,90.0,90.0,90.0,31,Barb Sanders: baseline
+HA,68.0,100.0,81.0,28,Barb Sanders: baseline
+micro avg,83.0,90.0,87.0,211,Barb Sanders: baseline
+macro avg,81.0,92.0,85.0,211,Barb Sanders: baseline
+weighted avg,85.0,90.0,87.0,211,Barb Sanders: baseline
+samples avg,86.0,91.0,87.0,211,Barb Sanders: baseline
+AN,86.0,78.0,82.0,49,Hall/VdC Norms: Female
+AP,88.0,92.0,90.0,130,Hall/VdC Norms: Female
+SD,92.0,66.0,77.0,50,Hall/VdC Norms: Female
+CO,89.0,76.0,82.0,66,Hall/VdC Norms: Female
+HA,84.0,96.0,90.0,68,Hall/VdC Norms: Female
+micro avg,88.0,84.0,86.0,363,Hall/VdC Norms: Female
+macro avg,88.0,81.0,84.0,363,Hall/VdC Norms: Female
+weighted avg,88.0,84.0,85.0,363,Hall/VdC Norms: Female
+samples avg,86.0,86.0,85.0,363,Hall/VdC Norms: Female
+AN,90.0,78.0,84.0,36,Hall/VdC Norms: Male
+AP,81.0,98.0,88.0,86,Hall/VdC Norms: Male
+SD,86.0,79.0,83.0,24,Hall/VdC Norms: Male
+CO,98.0,74.0,84.0,58,Hall/VdC Norms: Male
+HA,92.0,76.0,83.0,46,Hall/VdC Norms: Male
+micro avg,87.0,84.0,85.0,250,Hall/VdC Norms: Male
+macro avg,89.0,81.0,84.0,250,Hall/VdC Norms: Male
+weighted avg,89.0,84.0,85.0,250,Hall/VdC Norms: Male
+samples avg,87.0,86.0,85.0,250,Hall/VdC Norms: Male

@@ -156,9 +156,10 @@ class BERTClass(torch.nn.Module):
                     param.requires_grad = False
                     
     def forward(self, ids, mask, token_type_ids):
-        output_1 = self.l1(ids, attention_mask = mask, token_type_ids = token_type_ids)
-        output_1 = output_1.last_hidden_state[:, -1, :]
-        output_2 = self.l2(output_1)
+        output_1 = self.l1(ids, attention_mask=mask, token_type_ids=token_type_ids, output_hidden_states=True)
+        last_hidden_states = output_1.hidden_states[self.layer]
+        CLS = last_hidden_states[:,self.idx,:] # CLS = [0,0,:],         
+        output_2 = self.l2(CLS)
         output   = self.l3(output_2)
         return output
 
@@ -178,9 +179,10 @@ class BERT_PTM(transformers.PreTrainedModel):
                     param.requires_grad = False
                     
     def forward(self, ids, mask, token_type_ids):
-        output_1 = self.l1(ids, attention_mask = mask, token_type_ids = token_type_ids)
-        output_1 = output_1.last_hidden_state[:, -1, :]
-        output_2 = self.l2(output_1)
+        output_1 = self.l1(ids, attention_mask=mask, token_type_ids=token_type_ids, output_hidden_states=True)
+        last_hidden_states = output_1.hidden_states[self.layer]
+        CLS = last_hidden_states[:,self.idx,:] # CLS = [0,0,:],         
+        output_2 = self.l2(CLS)
         output   = self.l3(output_2)
         return output
 

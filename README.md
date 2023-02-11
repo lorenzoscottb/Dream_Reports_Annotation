@@ -1,4 +1,4 @@
-# Automatic Dream–Reports Annotation with Large Language Models
+# Automatic Scoring of Dream Reports’ Emotional Content with Large Language Models
 
 This repository contains the code, results, and analysis of the experiments on automatically annotating dream reports' emotional content. The annotation process is largely based on pre-trained largel language models (LLMs), implemented via Hugging Face 🤗. 
 
@@ -31,68 +31,54 @@ A link to downloaded the weights of the main model can be found in the `Experime
 ### Download and usage 
 You can find a use-case example of the main model, together with the link to download the weights [here](https://github.com/lorenzoscottb/Dream_Reports_Annotation/tree/main/Experiments/Supervised_Learning)
 
-## Secondary 🤗 models 
-While the main model achieves the best and most stable results, it is based on a custom architecture. Hence, setting up a classification pipeline requires more coding dependecies (see link above). For this reason, together with the main deployed model, we trained and open-sourced two more models, which are two LLMs "simply" tuned as `multi-class` classifiers, and solely using the the standard 🤗 trainer pipeline. Despite Achiving a lower performance, these models posses other desireble features. To start, they can be directly dowladed and used via the 🤗 ```transformers``` library. Moreover, one can annotate dreams in 94 languages, while the other is based on a (English-only) "small" LLM encoder, hence rquireing signficantly less computational power. 
+## [DReAMy](https://github.com/lorenzoscottb/DReAMy) and Secondary 🤗 models 
+While the main model achieves the best and most stable results, it is based on a custom architecture. Hence, setting up a classification pipeline requires more coding and dependecies. For this reason, together with the main deployed model, we trained and open-sourced few more models, which are two LLMs "simply" tuned as `multi-label` classifiers, and solely using the the standard 🤗 trainer pipeline. Despite Achiving a (sligtly) lower performance, these models posses other desireble features. To start, they can be directly dowladed and used via the 🤗 ```transformers``` library. Moreover, one can annotate dreams in 94 languages, while the other is based on a (English-only) "small" LLM encoder, hence rquireing signficantly less computational power. 
 
 ### Usage
-Select a tokenizer and a model between 
+These (and more) models (and functinality) can be directly used via [`DReAMy`](https://github.com/lorenzoscottb/DReAMy), the first NLP and AI based python library to analyse dream reports. Se the code below for a usage-example of DReAMy.
 
-[Large-Multilingual](https://huggingface.co/DReAMy-lib/xlm-roberta-large-DreamBank-emotion-presence)
 ```py
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
+import dreamy 
 
-model_name = "DReAMy-lib/xlm-roberta-large-DreamBank-emotion-presence"
-tokenizer  = AutoTokenizer.from_pretrained(model_name)
-model      = AutoModelForSequenceClassification.from_pretrained(model_name)
-```
-
-[Small–English only](https://huggingface.co/DReAMy-lib/bert-base-cased-DreamBank-emotion-presence)
-```py
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
-
-model_name = "DReAMy-lib/bert-base-cased-DreamBank-emotion-presence
-tokenizer  = AutoTokenizer.from_pretrained(model_name)
-model      = AutoModelForSequenceClassification.from_pretrained(model_name)
-```
-
-Setup and run the classification pipeline
-```py
-from transformers import pipeline
-
-# get some dream to classify
+# get some dreams to classify
 test_dreams = [
     "In my dream, I was followed by the scary monster.",
     "I was walking in a forest, surrounded by singing birds. I was calm and at peace."
 ]
 
-# set up the pipeline
-classifier = pipeline(
-    task="text-classification", 
-    model=model, 
-    tokenizer=tokenizer,
-    top_k=None, # set to k=n if just need top n classes instead of all
-)
+# Setup mode and classification function
+classification_type = "presence"
+model_type          = "large-multi"
 
-# get the model's classification
-predictions = classifier(test_dreams)
+model_name, task = dreamy.emotion_classification.emotion_model_maps[
+    "{}-{}".format(classification_type, model_type)
+]
+
+predictions = dreamy.predict_emotions(
+    dream_as_list, 
+    model_name, 
+    task,
+)
 
 # print the probability associated with each Hall & Van de Castle emotion:
 # anger (AN) apprehension (AP), sadness (SD), confusion (CO), happiness (HA)
 predictions
->>> [[{'label': 'AP', 'score': 0.8697441816329956},
->>>   {'label': 'CO', 'score': 0.1245221346616745},
->>>   {'label': 'HA', 'score': 0.025534192100167274},
->>>   {'label': 'AN', 'score': 0.015074575319886208},
->>>   {'label': 'SD', 'score': 0.010451494716107845}],
->>>  [{'label': 'HA', 'score': 0.9519748091697693},
->>>   {'label': 'AP', 'score': 0.07662183046340942},
->>>   {'label': 'SD', 'score': 0.042797815054655075},
->>>   {'label': 'CO', 'score': 0.02953989803791046},
->>>   {'label': 'AN', 'score': 0.008983743377029896}]]
+```
+```
+[[{'label': 'AN', 'score': 0.08541450649499893},
+  {'label': 'AP', 'score': 0.1043919175863266},
+  {'label': 'SD', 'score': 0.029732409864664078},
+  {'label': 'CO', 'score': 0.18161173164844513},
+  {'label': 'HA', 'score': 0.30588334798812866}],
+ [{'label': 'AN', 'score': 0.11174352467060089},
+  {'label': 'AP', 'score': 0.17271170020103455},
+  {'label': 'SD', 'score': 0.026576947420835495},
+  {'label': 'CO', 'score': 0.1214553639292717},
+  {'label': 'HA', 'score': 0.22257845103740692}]
 ````
 ### Query via Spaces
 
-To get an ide of the classification abilities of these two 🤗 models you can also directly query them via the [Hugging Face Space](https://huggingface.co/spaces/DReAMy-lib/dream) built on top of them. You can also you the space to check if the language your reports are in is included in the multi-lingual model.
+To get an idea of the tasks and models available via DReAMy, you can also directly query them via the [Hugging Face Space](https://huggingface.co/spaces/DReAMy-lib/dream).
 
 # Requirments
 

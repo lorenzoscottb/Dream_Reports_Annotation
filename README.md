@@ -2,7 +2,7 @@
 
 This repository contains the code, results, and analysis of the experiments on automatically annotating dream reports' emotional content. The annotation process is largely based on pre-trained largel language models (LLMs), implemented via Hugging Face 🤗. 
 
-Since you are here, you'd likely be interested in checking out [`DReAMy`](https://github.com/lorenzoscottb/DReAMy)!
+Since you are here, you'd likely be interested in checking out [`DReAMy`](https://github.com/lorenzoscottb/DReAMy) 😴📝🤖!
 
 # Content
 ## Experiments

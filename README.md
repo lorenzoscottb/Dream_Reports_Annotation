@@ -48,17 +48,19 @@ test_dreams = [
 
 # Setup mode and classification function
 classification_type = "presence"
-model_type          = "large-multi"
-
-model_name, task = dreamy.emotion_classification.emotion_model_maps[
-    "{}-{}".format(classification_type, model_type)
-]
+model_type          = "base-en"
+return_type         = "distribution" # set "present" for above-threshold only
+device              = "cpu"
 
 predictions = dreamy.predict_emotions(
     dream_as_list, 
-    model_name, 
-    task,
+    classification_type, 
+    model_type,
+    return_type=return_type, 
+    device=device,
 )
+
+predictions
 
 # print the probability associated with each Hall & Van de Castle emotion:
 # anger (AN) apprehension (AP), sadness (SD), confusion (CO), happiness (HA)

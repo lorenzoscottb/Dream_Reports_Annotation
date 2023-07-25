@@ -253,4 +253,3 @@ yarl=1.8.1=pypi_0
 zeromq=4.3.4=h2531618_0
 zipp=3.8.1=pypi_0
 zlib=1.2.12=h7f8727e_2
-zstd=1.5.2=ha4553b6_0

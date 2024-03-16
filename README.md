@@ -1,13 +1,13 @@
-# [Automatic Scoring of Dream Reports' Emotional Content with Large Language Models](https://arxiv.org/abs/2302.14828)
+# [Automatic Scoring of Dream Reports' Emotional Content with Large Language Models](https://aclanthology.org/2024.clpsych-1.7/)
 
-This repository contains the code, results, and analysis of the work on automatically annotating dream reports' emotional content. The annotation process is largely based on pre-trained largel language models (LLMs), implemented via Hugging Face 🤗. 
+This repository contains the code, results, and analysis of the paper, to automatically annotate dream reports' emotional content. The annotation process is largely based on pre-trained large language models (LLMs), implemented via Hugging Face 🤗. 
 
 Since you are here, you'd likely be interested in checking out [`DReAMy`](https://github.com/lorenzoscottb/DReAMy) 😴📝🤖!
 
 # Content
 ## Experiments
 
-The work revolvs around two main set of experiments:
+The work revolves around two main sets of experiments:
 
 - Unsupervised sentiment analysis
 - Supervised text classification
@@ -16,26 +16,26 @@ Code for each set of experiments can be found in the dedicated folders inside th
 
 ## Analysis
 
-The analysis of the collected results can be found in the dedicated jupiter notebooks.
+The analysis of the collected results can be found in the dedicated Jupiter notebooks.
 
 ## Results 
 
 The results and predictions collected in all the experiments. 
 
 # Trained Models
-The follwing sections explain how to use the different deployed models. You can either follow the instructions or jump [here](https://github.com/lorenzoscottb/Dream_Reports_Annotation/blob/main/Analysis/trained_model_testing.ipynb) to see a use-case of both with jupiter notebook.
+The following sections explain how to use the different deployed models. You can either follow the instructions or jump [here](https://github.com/lorenzoscottb/Dream_Reports_Annotation/blob/main/Analysis/trained_model_testing.ipynb) to see a use-case of both with Jupiter notebook.
 
 ## Main model
-A link to downloaded the weights of the main model can be found in the `Experiments/Supervised_Learning` section, together with the code used to tune the the model, collect the predictions preseted in the paper, as well as a basic usage example.
+A link to download the weights of the main model can be found in the `Experiments/Supervised_Learning` section, together with the code used to tune the model, collect the predictions presented in the paper, as well as a basic usage example.
 
 ### Download and usage 
 You can find a use-case example of the main model, together with the link to download the weights [here](https://github.com/lorenzoscottb/Dream_Reports_Annotation/tree/main/Experiments/Supervised_Learning)
 
 ## [DReAMy](https://github.com/lorenzoscottb/DReAMy) and Secondary 🤗 models 
-While the main model achieves the best and most stable results, it is based on a custom architecture. Hence, setting up a classification pipeline requires more coding and dependecies. For this reason, together with the main deployed model, we trained and open-sourced few more models, which are two LLMs "simply" tuned as `multi-label` classifiers, and solely using the the standard 🤗 trainer pipeline. Despite Achiving a (sligtly) lower performance, these models posses other desireble features. To start, they can be directly dowladed and used via the 🤗 ```transformers``` library. Moreover, one can annotate dreams in 94 languages, while the other is based on a (English-only) "small" LLM encoder, hence rquireing signficantly less computational power. 
+While the main model achieves the best and most stable results, it is based on a custom architecture. Hence, setting up a classification pipeline requires more coding and dependencies. For this reason, together with the main deployed model, we trained and open-sourced a few more models, which are two LLMs "simply" tuned as `multi-label` classifiers, and solely using the the standard 🤗 trainer pipeline. Despite achieving a (slightly) lower performance, these models possess other desirable features. To start, they can be directly dowladed and used via the 🤗 ```transformers``` library. Moreover, one can annotate dreams in 94 languages, while the other is based on a (English-only) "small" LLM encoder, hence requiring significantly less computational power. 
 
 ### Usage
-These (and more) models (and functinality) can be directly used via [`DReAMy`](https://github.com/lorenzoscottb/DReAMy), the first NLP and AI based python library to analyse dream reports. Se the code below for a usage-example of DReAMy.
+These (and more) models (and functionality) can be directly used via [`DReAMy`](https://github.com/lorenzoscottb/DReAMy), the first NLP and AI-based Python library to analyse dream reports. See the code below for a usage example of DReAMy.
 
 ```py
 import dreamy 
@@ -84,13 +84,13 @@ To get an idea of the tasks and models available via DReAMy, you can also direct
 
 # Requirments
 
-If you want to re-run the code of any of our experiment, please make sure to chek the `*_requirements.txt` files for each set of experiment.
+If you want to re-run the code of any of our experiments, please make sure to check the `*_requirements.txt` files for each set of experiments.
 
 # Acknowledgements
 
 ## Data
 ### Labelled Dream Reports
-As specified in the paper, the labelled data is frely availeb fro consulation via the Dream Bank website. The labelled data adopted in the supervised experiment consists of an xlm version of Dream Bank availabe upon request to the Dream Bank team.
+As specified in the paper, the labelled data is freely available for consultation via the Dream Bank website. The labelled data adopted in the supervised experiment consists of an xlm version of Dream Bank available upon request to the Dream Bank team.
 
 ### Full Dream Bank
 The unlabelled-data analysis was possible thanks to the [Dream Bank (and pre-scraped) data scraper](https://github.com/mattbierner/DreamScrape) from Matt Bierner.

@@ -1,8 +1,8 @@
-# [Automatic Scoring of Dream Reports' Emotional Content with Large Language Models](https://aclanthology.org/2024.clpsych-1.7/)
+# [Automatic Annotation of Dream Reports' Emotional Content with Large Language Models](https://aclanthology.org/2024.clpsych-1.7/)
 
 This repository contains the code, results, and analysis of the paper, to automatically annotate dream reports' emotional content. The annotation process is largely based on pre-trained large language models (LLMs), implemented via Hugging Face 🤗. 
 
-Since you are here, you'd likely be interested in checking out [`DReAMy`](https://github.com/lorenzoscottb/DReAMy) 😴📝🤖!
+Since you are here, you'd likely like to check out [`DReAMy`](https://github.com/lorenzoscottb/DReAMy) 😴📝🤖!
 
 # Content
 ## Experiments
@@ -32,7 +32,7 @@ A link to download the weights of the main model can be found in the `Experiment
 You can find a use-case example of the main model, together with the link to download the weights [here](https://github.com/lorenzoscottb/Dream_Reports_Annotation/tree/main/Experiments/Supervised_Learning)
 
 ## [DReAMy](https://github.com/lorenzoscottb/DReAMy) and Secondary 🤗 models 
-While the main model achieves the best and most stable results, it is based on a custom architecture. Hence, setting up a classification pipeline requires more coding and dependencies. For this reason, together with the main deployed model, we trained and open-sourced a few more models, which are two LLMs "simply" tuned as `multi-label` classifiers, and solely using the the standard 🤗 trainer pipeline. Despite achieving a (slightly) lower performance, these models possess other desirable features. To start, they can be directly dowladed and used via the 🤗 ```transformers``` library. Moreover, one can annotate dreams in 94 languages, while the other is based on a (English-only) "small" LLM encoder, hence requiring significantly less computational power. 
+While the main model achieves the best and most stable results, it is based on a custom architecture. Hence, setting up a classification pipeline requires more coding and dependencies. For this reason, together with the main deployed model, we trained and open-sourced a few more models, which are two LLMs "simply" tuned as `multi-label` classifiers, and solely using the the standard 🤗 trainer pipeline. Despite achieving a (slightly) lower performance, these models possess other desirable features. They can be downloaded and used via the 🤗 ```transformers``` library. Moreover, one can annotate dreams in 94 languages, while the other is based on a (English-only) "small" LLM encoder, hence requiring significantly less computational power. 
 
 ### Usage
 These (and more) models (and functionality) can be directly used via [`DReAMy`](https://github.com/lorenzoscottb/DReAMy), the first NLP and AI-based Python library to analyse dream reports. See the code below for a usage example of DReAMy.

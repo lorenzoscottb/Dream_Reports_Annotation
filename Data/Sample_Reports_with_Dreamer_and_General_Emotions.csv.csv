@@ -1,0 +1,4 @@
+gender,age,type,collection,id,time,date,number,report,# words,General Emotions,Dreamer Emotions,# Dreamer Emotions,# General Emotions
+M,YA,series,Collection A,b-baseline,1960-1997,04/08/1960,3,This is a mock report of a dream,8,AP_AN_HA_CO,AP_AN_HA,3,4
+F,YA,series,Collection B,b-baseline,1960-1997,16/03/1974,16,This is a second mock report of a dream,9,AP_HA_AP_HA_SD,AP_HA_AP_HA,4,5
+F,YA,series,Collection VÏC,b-baseline,1960-1997,1977-??-??,47,This is a thirds mock report of a drem,9,AN_AP,Missing,0,2
